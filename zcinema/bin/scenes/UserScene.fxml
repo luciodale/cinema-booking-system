@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compgc01.UserSceneController">
+   <children>
+      <AnchorPane layoutX="-3.0" layoutY="24.0" prefHeight="374.0" prefWidth="149.0">
+         <children>
+            <Label fx:id="titleLabel" layoutX="33.0" layoutY="272.0" text="Employee">
+               <graphic>
+                  <MaterialIconView glyphName="WORK" size="20" />
+               </graphic>
+            </Label>
+            <Label fx:id="lastNameLabel" layoutX="58.0" layoutY="210.0" text="Last Name" />
+            <Label fx:id="firstNameLabel" layoutX="57.0" layoutY="189.0" text="First Name" />
+            <Button layoutX="25.0" layoutY="139.0" mnemonicParsing="false" onAction="#uploadImageClick" style="-fx-background-color: #353238;" text="Upload Photo" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="UPLOAD" size="20" />
+               </graphic>
+            </Button>
+            <Button layoutX="24.0" layoutY="320.0" minWidth="30.0" mnemonicParsing="false" onAction="#editInfoClick" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: #353238; -fx-min-width: 40;" text="Edit" textFill="WHITE">
+               <graphic>
+                  <MaterialIconView fill="WHITE" glyphName="EDIT" size="15" />
+               </graphic>
+            </Button>
+            <Separator layoutX="168.0" layoutY="13.0" orientation="VERTICAL" prefHeight="365.0" prefWidth="9.0" />
+            <ImageView fx:id="uploadedUserIcon" fitHeight="114.0" fitWidth="123.0" layoutX="30.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/images/backgroundImages/defaultUserIcon.png" />
+               </image>
+            </ImageView>
+            <MaterialIconView glyphName="ACCOUNT_CIRCLE" layoutX="33.0" layoutY="218.0" size="20" />
+            <Label fx:id="emailLabel" layoutX="33.0" layoutY="238.0" text="Send Email">
+               <graphic>
+                  <MaterialIconView glyphName="MAIL" size="20" />
+               </graphic>
+            </Label>
+            <Button id="sendEmailButton" layoutX="19.0" layoutY="233.0" minWidth="30.0" mnemonicParsing="false" onAction="#sendEmailClick" opacity="0.0" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: #353238; -fx-min-width: 40;" text="Send Email" textFill="WHITE">
+               <graphic>
+                  <MaterialIconView fill="WHITE" glyphName="EDIT" size="15" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="background" layoutX="148.0" layoutY="31.0" prefHeight="371.0" prefWidth="551.0">
+        <children>
+         <ImageView fx:id="userSceneBackground" fitHeight="400.0" fitWidth="532.0" layoutX="21.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/images/backgroundImages/backgroundUserScene-02.png" />
+               </image>
+            </ImageView> 
+            <Button fx:id="manageFilmsButton" layoutX="24.0" layoutY="275.0" minWidth="30.0" mnemonicParsing="false" onAction="#manageMoviesClick" prefHeight="43.0" prefWidth="525.0" style="-fx-background-color: #353238; -fx-min-width: 40;" text="Manage Films" textFill="WHITE">
+               <graphic>
+                  <MaterialIconView fill="WHITE" glyphName="MOVIE" size="20" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="manageBookingsButton" layoutX="24.0" layoutY="322.0" minWidth="30.0" mnemonicParsing="false" onAction="#manageBookingsClick" prefHeight="43.0" prefWidth="525.0" style="-fx-background-color: #353238; -fx-min-width: 40;" text="Manage Bookings" textFill="WHITE">
+               <graphic>
+                  <MaterialIconView fill="WHITE" glyphName="ASSIGNMENT" size="20" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="exportFilmList" layoutX="24.0" layoutY="228.0" minWidth="30.0" mnemonicParsing="false" onAction="#exportFilmList" prefHeight="43.0" prefWidth="525.0" style="-fx-background-color: #353238; -fx-min-width: 40;" text="Export Film List" textFill="WHITE" visible="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="FILE_EXPORT" size="20" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="57.0" prefWidth="702.0">
+         <children>
+            <MenuBar prefHeight="35.0" prefWidth="702.0" style="-fx-min-width: 100%; -fx-background-color: #353238;" />
+            <Label fx:id="windowTitleLabel" layoutX="10.0" layoutY="6.0" text="Management View" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
+            <Button fx:id="logOutButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="639.0" minHeight="21.0" mnemonicParsing="false" onAction="#logOutClick" prefHeight="34.0" prefWidth="57.0" style="-fx-background-color: none; -fx-label-padding: -10; -fx-font-size: 12;" text="Log Out" textAlignment="CENTER" textFill="#ebdfdf">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="stopPlayer" fitHeight="21.0" fitWidth="45.0" layoutX="175.0" layoutY="8.0" onMouseClicked="#playStopMusic" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/images/backgroundImages/player-04.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

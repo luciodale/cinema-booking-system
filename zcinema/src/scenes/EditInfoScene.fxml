@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compgc01.EditInfoController">
+   <children>
+      <AnchorPane layoutX="-3.0" layoutY="24.0" prefHeight="374.0" prefWidth="339.0">
+         <children>
+            <TextField fx:id="updateFirstName" layoutX="103.0" layoutY="105.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
+            <TextField fx:id="updateLastName" layoutX="103.0" layoutY="142.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
+            <TextField fx:id="updateEmail" layoutX="102.0" layoutY="201.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
+            <TextField fx:id="updatePassword" layoutX="102.0" layoutY="259.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
+            <Text layoutX="23.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+            <Text layoutX="23.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+            <Text layoutX="54.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+            <Button layoutX="103.0" layoutY="319.0" minWidth="30.0" mnemonicParsing="false" onAction="#saveClick" prefHeight="30.0" prefWidth="162.0" style="-fx-background-color: #353238; -fx-min-width: 40;" text="Save" textFill="WHITE">
+               <graphic>
+                  <MaterialIconView fill="WHITE" glyphName="SAVE" size="15" />
+               </graphic>
+            </Button>
+            <Text layoutX="42.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Profile:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="24.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="45.0" prefWidth="702.0">
+         <children>
+            <MenuBar prefHeight="35.0" prefWidth="702.0" style="-fx-min-width: 100%; -fx-background-color: #353238;" />
+            <Label fx:id="windowTitleLabel" layoutX="10.0" layoutY="6.0" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
+            <Button fx:id="backButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="639.0" minHeight="21.0" mnemonicParsing="false" onAction="#backToPrevScene" prefHeight="34.0" prefWidth="57.0" style="-fx-background-color: none; -fx-label-padding: -10; -fx-font-size: 12;" text="Back" textAlignment="CENTER" textFill="#ebdfdf">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="345.0" layoutY="38.0" orientation="VERTICAL" prefHeight="365.0" prefWidth="9.0" />
+      <Label fx:id="titleLabelNew" layoutX="416.0" layoutY="174.0" text="Employee">
+         <graphic>
+            <MaterialIconView glyphName="WORK" size="20" />
+         </graphic>
+      </Label>
+      <Label fx:id="lastNameLabelNew" layoutX="439.0" layoutY="115.0" />
+      <Text layoutX="406.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Details:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="407.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old Details:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <MaterialIconView glyphName="ACCOUNT_CIRCLE" layoutX="415.0" layoutY="123.0" size="20" />
+      <Label fx:id="firstNameLabelNew" layoutX="440.0" layoutY="94.0" />
+      <Label fx:id="emailLabelNew" layoutX="416.0" layoutY="143.0">
+         <graphic>
+            <MaterialIconView glyphName="MAIL" size="20" />
+         </graphic>
+      </Label>
+      <Label fx:id="titleLabel" layoutX="418.0" layoutY="333.0" text="Employee">
+         <graphic>
+            <MaterialIconView glyphName="WORK" size="20" />
+         </graphic>
+      </Label>
+      <Label fx:id="lastNameLabel" layoutX="441.0" layoutY="274.0" text="Last Name" />
+      <MaterialIconView glyphName="ACCOUNT_CIRCLE" layoutX="417.0" layoutY="282.0" size="20" />
+      <Label fx:id="firstNameLabel" layoutX="441.0" layoutY="253.0" text="First Name" />
+      <Label fx:id="emailLabel" layoutX="419.0" layoutY="302.0" text="Email">
+         <graphic>
+            <MaterialIconView glyphName="MAIL" size="20" />
+         </graphic>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="380.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compgc01.BookingSummaryController">
+   <children>
+      <AnchorPane prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/images/backgroundImages/bookingSummary-01.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="109.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+            <Text layoutX="120.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Film:" />
+            <Text layoutX="117.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" />
+            <Text layoutX="116.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" />
+            <ImageView fitHeight="99.0" fitWidth="113.0" layoutX="192.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/images/backgroundImages/drink-01.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="249.0" layoutX="79.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/images/backgroundImages/bookedSuccessfully-01.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nameSummary" layoutX="156.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="filmSummary" layoutX="156.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="dateSummary" layoutX="156.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="timeSummary" layoutX="156.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text layoutX="112.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seats:" />
+            <Text fx:id="seatSummary" layoutX="156.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="58.9814453125" />
+            <ToggleButton fx:id="closeButton" layoutX="219.0" layoutY="342.0" mnemonicParsing="false" onAction="#closeStage" prefHeight="44.0" prefWidth="99.0" style="-fx-background-color: white;" text="Close">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="emailButton" layoutX="85.0" layoutY="342.0" mnemonicParsing="false" onAction="#emailReminder" prefHeight="44.0" prefWidth="99.0" style="-fx-background-color: white;" text="Email">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </ToggleButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

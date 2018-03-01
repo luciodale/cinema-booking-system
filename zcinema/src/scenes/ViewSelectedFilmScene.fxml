@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compgc01.ViewSelectedFilmController">
+   <children>
+      <AnchorPane prefHeight="37.0" prefWidth="702.0" />
+      <MenuBar prefHeight="35.0" prefWidth="702.0" style="-fx-min-width: 100%; -fx-background-color: #353238;" />
+      <Text fill="WHITE" layoutX="15.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 15;" text="All Films" wrappingWidth="256.8037519454956" />
+      <Button fx:id="backButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="651.0" layoutY="-1.0" minHeight="21.0" mnemonicParsing="false" onAction="#backToPrevScene" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: none; -fx-label-padding: -10; -fx-font-size: 12;" text="Back" textAlignment="CENTER" textFill="#ebdfdf">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fx:id="selectedFilmPoster" fitHeight="297.0" fitWidth="193.0" layoutX="44.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/images/backgroundImages/DefaultFilmPoster.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="title" fill="WHITE" layoutX="277.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MOVIE TITLE" wrappingWidth="353.2851527631283">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="description" fill="WHITE" layoutX="279.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="353.28515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="275.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="295.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="startDate" fill="WHITE" layoutX="338.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dd-mm-yyyy">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="endDate" fill="WHITE" layoutX="338.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dd-mm-yyyy">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="266.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Times:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="time" fill="WHITE" layoutX="338.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HH:mm">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="bookButton" layoutX="552.0" layoutY="337.0" mnemonicParsing="false" onAction="#goToBookingScene" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: white;" text="Book Now" />
+      <Button fx:id="deleteFilmButton" layoutX="552.0" layoutY="289.0" mnemonicParsing="false" onAction="#deleteFilm" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: white;" text="Delete Film" />
+   </children>
+</AnchorPane>
