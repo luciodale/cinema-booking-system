@@ -2,8 +2,10 @@ MIT License
 
 Copyright (c) 2018 Filippos Zofakis and Lucio D'Alessandro
 
-Permission to use the Software and documentation files can be obtained only upon request. Any individual who will be authorised to downloaded the code will have the rights
-to use, copy, modify, merge, publish, and distribute copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission to use the Software and documentation files can be obtained only upon request.
+Any individual who will be authorised to downloaded the code will have the rights to use,
+copy, modify, merge, publish, and distribute copies of the Software, and to permit persons
+to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
