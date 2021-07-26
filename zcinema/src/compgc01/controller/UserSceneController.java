@@ -179,8 +179,10 @@ public class UserSceneController {
             exportFilmList.setVisible(false);
         }
 
+        //Todo: pegar a imagem pelo microserviço
+        //String path = URLDecoder.decode(Main.getPath() + "res/images/userImages/", "UTF-8");
         String path = URLDecoder.decode(Main.getPath() + "res/images/userImages/", "UTF-8");
-        File file = new File(path + Main.getCurrentUser().getUsername() + ".png");
+        File file = new File(path + "defaultUserIcon" + ".png");
         Image img = SwingFXUtils.toFXImage(ImageIO.read(file), null);
         uploadedUserIcon.setImage(img);
     }

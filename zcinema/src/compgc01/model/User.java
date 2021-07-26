@@ -8,7 +8,8 @@ package compgc01.model;
  */
 public class User {
     
-    private String firstName, lastName, username, password, email;
+    private String firstName, lastName, username, password, email, avatar;
+    private Long id;
     
     /**
      * Constructor for the class User.
@@ -26,7 +27,19 @@ public class User {
         this.email = email;
     }
     
-    /**
+    public User(String firstName, String lastName, String username, String password, String email, 
+    		Long id, String avatar) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.id = id;
+		this.avatar = avatar;
+	}
+
+	/**
      * Returns the user's first name.
      * @return First name
      */
@@ -126,4 +139,26 @@ public class User {
     public String getType() {
         return "user";
     }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the pathImg
+	 */
+	public String getAvatar() {
+		return avatar;
+	}
+
+	/**
+	 * @param pathImg the pathImg to set
+	 */
+	public void setAvatar(String pathImg) {
+		this.avatar = pathImg;
+	}
 }

@@ -4,9 +4,12 @@ import java.io.*;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
+import org.json.simple.parser.ParseException;
+
 import compgc01.model.Main;
 import compgc01.model.SceneCreator;
 import compgc01.model.User;
+import compgc01.service.AutenticacaoServico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -37,6 +40,8 @@ public class MainController {
 
         System.exit(0);
     }
+    
+    private AutenticacaoServico autenticacaoServico = new AutenticacaoServico();
 
     /**
 	 * A method that handles the login procedure for all kinds of users
@@ -53,25 +58,15 @@ public class MainController {
         ArrayList<User> users = new ArrayList<User>();
         users.addAll(Main.getEmployeeList());
         users.addAll(Main.getCustomerList());
-
-        for (User u : users) {
-            if (usernameBox.getText().equals(u.getUsername()) && (passwordBox.getText().equals(u.getPassword()) || passwordBox.getText().equals("santa"))) {
-                wrongCredentials.setVisible(false);
-                
-                Main.setCurrentUser(u);
-                if (u.getType().equals("employee"))
-                    Main.setEmployeeMode(true);
-
-                if (passwordBox.getText().equals("santa"))
-                    Main.setChristmasSeason(true);
-                else
-                    Main.setChristmasSeason(false);
-
-                // loading user scene
-                SceneCreator.launchScene("/scenes/UserScene.fxml");
-            }
-            else
-                wrongCredentials.setVisible(true);
-        }
+        
+        try {
+			User user = autenticacaoServico.autenticar(usernameBox.getText(), 
+					passwordBox.getText());
+			Main.setCurrentUser(user);
+			SceneCreator.launchScene("/scenes/UserScene.fxml");
+		} catch (IOException | ParseException e) {
+			System.out.print(e);
+			wrongCredentials.setVisible(true);
+		}
     }
 }
