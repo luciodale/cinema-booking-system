@@ -18,7 +18,6 @@
             <TextField fx:id="updateFirstName" layoutX="103.0" layoutY="105.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
             <TextField fx:id="updateLastName" layoutX="103.0" layoutY="142.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
             <TextField fx:id="updateEmail" layoutX="102.0" layoutY="201.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
-            <TextField fx:id="updatePassword" layoutX="102.0" layoutY="259.0" onKeyPressed="#editUpdateText" onKeyReleased="#editUpdateText" />
             <Text layoutX="23.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
             <Text layoutX="23.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
             <Text layoutX="54.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
@@ -32,7 +31,6 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text layoutX="24.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="45.0" prefWidth="702.0">

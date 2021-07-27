@@ -28,7 +28,7 @@
       </Label>
       <AnchorPane layoutX="406.0" layoutY="108.0" prefHeight="223.0" prefWidth="269.0" style="-fx-background-color: #353238;">
          <children>
-            <TextField fx:id="usernameBox" layoutX="26.0" layoutY="70.0" prefHeight="26.0" prefWidth="215.0" promptText="Username" />
+            <TextField fx:id="usernameBox" layoutX="26.0" layoutY="70.0" prefHeight="26.0" prefWidth="215.0" promptText="Email" />
             <PasswordField fx:id="passwordBox" layoutX="26.0" layoutY="114.0" onAction="#loginClick" prefHeight="26.0" prefWidth="215.0" promptText="Password" />
             <Button fx:id="logInButton" layoutX="26.0" layoutY="159.0" mnemonicParsing="false" onAction="#loginClick" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #7775;" text="Go" textAlignment="CENTER" textFill="#ebdfdf">
                <font>

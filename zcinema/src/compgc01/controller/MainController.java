@@ -50,19 +50,12 @@ public class MainController {
 	 */
     @FXML
     public void loginClick(ActionEvent event) throws IOException, GeneralSecurityException {
-
-        Main.readJSONFile("employeesJSON.txt");
-        Main.readJSONFile("customersJSON.txt");
-        Main.readJSONFile("filmsJSON.txt");
-
-        ArrayList<User> users = new ArrayList<User>();
-        users.addAll(Main.getEmployeeList());
-        users.addAll(Main.getCustomerList());
-        
+   
         try {
 			User user = autenticacaoServico.autenticar(usernameBox.getText(), 
 					passwordBox.getText());
 			Main.setCurrentUser(user);
+			Main.setToken(autenticacaoServico.getToken());
 			SceneCreator.launchScene("/scenes/UserScene.fxml");
 		} catch (IOException | ParseException e) {
 			System.out.print(e);

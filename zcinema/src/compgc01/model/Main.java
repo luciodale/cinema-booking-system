@@ -12,6 +12,7 @@ import java.util.HashSet;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import compgc01.service.AutenticacaoServico;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -64,6 +65,7 @@ public class Main extends Application {
     static HashSet<Film> films = new HashSet<Film>();
     static HashSet<BookingHistoryItem> bookings = new HashSet<BookingHistoryItem>();
 
+    static String token;
 
     /**
      * The main method. It checks whether the designed files exist. If not, it generates them.
@@ -135,6 +137,14 @@ public class Main extends Application {
     public static Main getMainApplication() {
 
         return m;
+    }
+    
+    public static String getToken() {
+    	return token;
+    }
+    
+    public static void setToken(String novoToken) {
+    	token = novoToken;
     }
 
     /**
@@ -317,7 +327,7 @@ public class Main extends Application {
 
     public static boolean isEmployee() {
 
-        return employeeMode;
+        return !currentUser.getProfile().equals("Cliente");
     }
 
     public static void setEmployeeMode(boolean employeeMode) {

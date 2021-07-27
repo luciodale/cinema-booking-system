@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import compgc01.model.Encryption;
 import compgc01.model.Main;
 import compgc01.model.SceneCreator;
+import compgc01.service.UserServico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,6 +40,8 @@ public class EditInfoController implements Initializable {
 	@FXML
 	TextField updateFirstName, updateLastName, updateEmail, updatePassword;
 
+	UserServico userServico = new UserServico();
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -84,9 +87,7 @@ public class EditInfoController implements Initializable {
 	 * @throws IOException, GeneralSecurityException, the second being linked to the Encryption features 
 	 */
 	@FXML
-	public void saveClick(ActionEvent event) throws IOException, GeneralSecurityException {
-
-		String userType = Main.getCurrentUser().getType();
+	public void saveClick(ActionEvent event) throws GeneralSecurityException {
 
 		Alert alertConf = new Alert(AlertType.CONFIRMATION, "Are you sure you want to update your information?", ButtonType.NO, ButtonType.YES);
 		alertConf.showAndWait();
@@ -96,7 +97,6 @@ public class EditInfoController implements Initializable {
 		} else {
 			if (!updateEmail.getText().trim().isEmpty()) {
 				if(emailValidator()){
-					Main.modifyJSONFile(userType + "sJSON.txt", Main.getCurrentUser().getUsername(), "email", updateEmail.getText());
 					Main.getCurrentUser().setEmail(updateEmail.getText());
 				}
 				else {
@@ -108,21 +108,25 @@ public class EditInfoController implements Initializable {
 				}
 			}
 			if (!updateFirstName.getText().trim().isEmpty()) {
-				Main.modifyJSONFile(userType + "sJSON.txt", Main.getCurrentUser().getUsername(), "firstName", updateFirstName.getText());
 				Main.getCurrentUser().setFirstName(updateFirstName.getText());
 			}
 			if (!updateLastName.getText().trim().isEmpty()) {
-				Main.modifyJSONFile(userType + "sJSON.txt", Main.getCurrentUser().getUsername(), "lastName", updateLastName.getText());
 				Main.getCurrentUser().setLastName(updateLastName.getText());
 			}
 
-			if (!updatePassword.getText().trim().isEmpty()) {
-				String encryptedPassword = Encryption.encrypt(updatePassword.getText());
-				Main.modifyJSONFile(userType + "sJSON.txt", Main.getCurrentUser().getUsername(), "password", encryptedPassword);
-				Main.getCurrentUser().setPassword(updatePassword.getText());
+			try {
+				userServico.atualizarInformacoes(Main.getCurrentUser(), Main.getToken());
+				alertConf.close();
+				SceneCreator.launchScene("/scenes/UserScene.fxml");
+				
+			} catch (IOException e) {
+				
+				Alert alert = new Alert(AlertType.WARNING, "An error occurred please try again later", ButtonType.OK);
+				alert.showAndWait();
+				if(alert.getResult() == ButtonType.OK){
+					return;
+				}
 			}
-			alertConf.close();
-			SceneCreator.launchScene("/scenes/UserScene.fxml");
 		}
 	}
 

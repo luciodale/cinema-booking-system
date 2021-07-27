@@ -1,5 +1,7 @@
 package compgc01.model;
 
+import org.json.simple.JSONObject;
+
 /**
  * A class represeting a general user
  * to act as the parent class for employee and customer.
@@ -8,7 +10,7 @@ package compgc01.model;
  */
 public class User {
     
-    private String firstName, lastName, username, password, email, avatar;
+    private String firstName, lastName, username, password, email, avatar, profile;
     private Long id;
     
     /**
@@ -27,16 +29,17 @@ public class User {
         this.email = email;
     }
     
-    public User(String firstName, String lastName, String username, String password, String email, 
-    		Long id, String avatar) {
+	public User(String firstName, String lastName, String username, String password, String email, String avatar,
+			String profile, Long id) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.id = id;
 		this.avatar = avatar;
+		this.profile = profile;
+		this.id = id;
 	}
 
 	/**
@@ -161,4 +164,27 @@ public class User {
 	public void setAvatar(String pathImg) {
 		this.avatar = pathImg;
 	}
+
+	/**
+	 * @return the profile
+	 */
+	public String getProfile() {
+		return profile;
+	}
+
+	/**
+	 * @param profile the profile to set
+	 */
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+	
+    public String toJSONString() {
+        JSONObject json = new JSONObject();
+        json.put("email", getEmail());
+        json.put("first_name", getFirstName());
+        json.put("last_name", getLastName());
+        json.put("profile", getProfile());
+        return json.toJSONString();
+    }
 }
